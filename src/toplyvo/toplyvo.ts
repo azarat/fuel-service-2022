@@ -3,6 +3,7 @@ import MockupPrices from '../mockups/prices.json';
 import MockupHistoryIn from '../mockups/historyIn.json';
 import MockupHistoryOut from '../mockups/historyOut.json';
 import MockupBalance from '../mockups/balance.json';
+import MockupLogin from '../mockups/login.json';
 import axios, { AxiosInstance } from 'axios';
 
 import { LoginBodyDto, LoginResponse } from './dto/login.dto';
@@ -40,13 +41,10 @@ class Toplyvo {
   }
 
   async login(body: LoginBodyDto): Promise<LoginResponse> {
-    const {
-      data: { data },
-    } = await HttpClient.httpClient.post(`/partner/v1/client/login`, body);
+    const uuid = MockupLogin.data.user.uuid
 
     return {
-      token: data.token,
-      phone: data.client.phone,
+      token: uuid,
     };
   }
 

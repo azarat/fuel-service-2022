@@ -18,12 +18,9 @@ class TokenService {
     await toplyvoRepository.createCode({ phone });
   }
 
-  async login(token: string, { code }: LoginDto) {
-    const { phone, id } = await TokenService.verifyUser(token);
-    const { token: userToken } = await toplyvoRepository.login({
-      code,
-      phone,
-    });
+  async login(token: string) {
+    const { id } = await TokenService.verifyUser(token);
+    const { token: userToken } = await toplyvoRepository.login({ id });
     await tokenRepository.createToken(id, userToken);
   }
 
