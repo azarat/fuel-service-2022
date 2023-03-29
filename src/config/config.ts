@@ -19,6 +19,7 @@ class Config {
   };
 
   apiHost: string;
+  apiEnv: string;
   partnerToken: string;
   mongoUri: string;
   port: string;
@@ -32,6 +33,7 @@ class Config {
   constructor() {
     this.port = process.env.PORT;
     this.apiHost = process.env.API_HOST;
+    this.apiEnv = process.env.API_ENV;
     this.userSdkUrl = process.env.USER_SDK_URL
   }
 

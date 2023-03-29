@@ -12,7 +12,7 @@ const app = fastify({
   logger: true,
 });
 
-app.get('/health', async () => 'Hello World');
+app.get(`/${config.apiEnv}/FuelService/health`, async () => 'Hello World');
 app.register(swagger, {
   exposeRoute: true,
   routePrefix: '/docs',
@@ -32,9 +32,9 @@ app.setErrorHandler((err, _, res) => {
     res.status(500).send(err.message);
   }
 });
-app.register(tokenController, { prefix: '/login' });
-app.register(fuelController, { prefix: '/fuels' });
-app.register(orderController, { prefix: '/orders' });
+app.register(tokenController, { prefix: `/${config.apiEnv}/FuelService/login` });
+app.register(fuelController, { prefix: `/${config.apiEnv}/FuelService/fuels` });
+app.register(orderController, { prefix: `/${config.apiEnv}/FuelService/orders` });
 
 const start = async () => {
   try {
