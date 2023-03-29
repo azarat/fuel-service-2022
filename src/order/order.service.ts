@@ -8,6 +8,8 @@ import { CreateOrderDto } from './dto/create-order.dto';
 import { CallbackOrderDto } from './dto/callback-order.dto';
 import { TokenService } from '../token/token.service';
 import axios from 'axios';
+import MockupQrData from '../mockups/qr.json'
+import { GenerateQrDto } from './dto/generate-qr.dto';
 
 class OrderService {
   private static STATUSES = {
@@ -23,6 +25,13 @@ class OrderService {
     fulfilled: 'FUEL_READY',
     written_off: 'WRITTEN_OFF',
     written_off_partial: 'WRITTEN_OFF_PARTIAL',
+  }
+
+  async getQrData(data:GenerateQrDto) {
+    // MOCKUP
+    const qrData = MockupQrData.data.card.qr
+
+    return qrData
   }
 
   getFuels() {
