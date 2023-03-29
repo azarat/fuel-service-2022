@@ -1,0 +1,213 @@
+{
+    "result": true,
+    "data": {
+      "balance": {
+        "transactions": [
+          {
+            "id": 4,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe03",
+            "date": 1672379551,
+            "amount": 470168
+          },
+          {
+            "id": 5,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe04",
+            "date": 1672375951,
+            "amount": 148285
+          },
+          {
+            "id": 6,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe05",
+            "date": 1672372351,
+            "amount": 336519
+          },
+          {
+            "id": 7,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe06",
+            "date": 1672368751,
+            "amount": 482545
+          },
+          {
+            "id": 8,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe07",
+            "date": 1672365151,
+            "amount": 12629
+          },
+          {
+            "id": 9,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe08",
+            "date": 1672361551,
+            "amount": 248927
+          },
+          {
+            "id": 10,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe09",
+            "date": 1672357951,
+            "amount": 35253
+          },
+          {
+            "id": 11,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe10",
+            "date": 1672354351,
+            "amount": 344
+          },
+          {
+            "id": 12,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe11",
+            "date": 1672350751,
+            "amount": 499351
+          },
+          {
+            "id": 13,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe12",
+            "date": 1672347151,
+            "amount": 270218
+          },
+          {
+            "id": 14,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe13",
+            "date": 1672343551,
+            "amount": 129270
+          },
+          {
+            "id": 15,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe14",
+            "date": 1672339951,
+            "amount": 342353
+          },
+          {
+            "id": 16,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe15",
+            "date": 1672336351,
+            "amount": 187734
+          },
+          {
+            "id": 17,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe16",
+            "date": 1672332751,
+            "amount": 266924
+          },
+          {
+            "id": 18,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe17",
+            "date": 1672329151,
+            "amount": 185763
+          },
+          {
+            "id": 19,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe18",
+            "date": 1672325551,
+            "amount": 477381
+          },
+          {
+            "id": 20,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe19",
+            "date": 1672321951,
+            "amount": 48949
+          },
+          {
+            "id": 21,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe20",
+            "date": 1672318351,
+            "amount": 177195
+          },
+          {
+            "id": 22,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe21",
+            "date": 1672314751,
+            "amount": 237657
+          },
+          {
+            "id": 23,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe22",
+            "date": 1672311151,
+            "amount": 458989
+          },
+          {
+            "id": 24,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe23",
+            "date": 1672307551,
+            "amount": 495622
+          },
+          {
+            "id": 25,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe24",
+            "date": 1672303951,
+            "amount": 384793
+          },
+          {
+            "id": 26,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe25",
+            "date": 1672300351,
+            "amount": 100271
+          },
+          {
+            "id": 27,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe26",
+            "date": 1672296751,
+            "amount": 131609
+          },
+          {
+            "id": 28,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe27",
+            "date": 1672293151,
+            "amount": 318708
+          },
+          {
+            "id": 29,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe28",
+            "date": 1672289551,
+            "amount": 166694
+          },
+          {
+            "id": 30,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe29",
+            "date": 1672285951,
+            "amount": 33518
+          },
+          {
+            "id": 31,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe30",
+            "date": 1672282351,
+            "amount": 142008
+          },
+          {
+            "id": 32,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe31",
+            "date": 1672278751,
+            "amount": 434497
+          },
+          {
+            "id": 33,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe32",
+            "date": 1672275151,
+            "amount": 262596
+          },
+          {
+            "id": 34,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe33",
+            "date": 1672271551,
+            "amount": 135365
+          },
+          {
+            "id": 35,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe34",
+            "date": 1672267951,
+            "amount": 486072
+          },
+          {
+            "id": 36,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe35",
+            "date": 1672264351,
+            "amount": 159384
+          },
+          {
+            "id": 37,
+            "user_uuid": "a6874fda-b1de-4a6b-a461-6b04988efe36",
+            "date": 1672260751,
+            "amount": 296548
+          }
+        ]
+      }
+    }
+  }

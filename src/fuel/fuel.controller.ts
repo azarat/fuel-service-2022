@@ -6,10 +6,27 @@ import { userGuard } from '../guards/user.guard';
 import fuelService from './fuel.service';
 
 const fuelController = (server: FastifyInstance, _, done) => {
+  // CHECKING
   server.get('/', {
     schema: { ...tokenSchema, tags: ['Fuels'] },
     preValidation: userGuard,
-    handler: () => fuelService.getFuels(),
+    handler: async (req, res) => {
+      const fuels = await fuelService.getFuels()
+      console.log(fuels[0].fuels, "fuels");
+      
+      return res.status(200).send(fuels);
+    },
+  });
+
+  server.get('/history', {
+    schema: { ...tokenSchema, tags: ['Fuels'] },
+    preValidation: userGuard,
+    handler: async (req, res) => {
+      const fuelHistory = await fuelService.getFuelHistory()
+      console.log(fuelHistory, "fuelHistory");
+      
+      return res.status(200).send(fuelHistory);
+    },
   });
 
   done();

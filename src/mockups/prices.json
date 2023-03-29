@@ -1,0 +1,423 @@
+{
+  "result": true,
+  "data": {
+    "card": {
+      "prices": [
+        {
+          "1": {
+            "title": "Wog",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 5200
+                }
+              },
+              {
+                "95": {
+                  "title": "95 MUSTANG",
+                  "price": 5400
+                }
+              },
+              {
+                "92": {
+                  "title": "100 MUSTANG",
+                  "price": 5900
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5600
+                }
+              },
+              {
+                "92": {
+                  "title": "MUSTANG+ ДП",
+                  "price": 5900
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2908
+                }
+              }
+            ]
+          }
+        },
+        {
+          "24": {
+            "title": "UPG",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4900
+                }
+              },
+              {
+                "92": {
+                  "title": "upg 95",
+                  "price": 5100
+                }
+              },
+              {
+                "92": {
+                  "title": "upg 100",
+                  "price": 5500
+                }
+              },
+              {
+                "92": {
+                  "title": "EURO DIESEL",
+                  "price": 5300
+                }
+              },
+              {
+                "92": {
+                  "title": "DIESEL Арктика",
+                  "price": 5700
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2790
+                }
+              }
+            ]
+          }
+        },
+        {
+          "2": {
+            "title": "Shell",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 5099
+                }
+              },
+              {
+                "92": {
+                  "title": "V-Power",
+                  "price": 5199
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5599
+                }
+              },
+              {
+                "92": {
+                  "title": "V-Power",
+                  "price": 5649
+                }
+              },
+              {
+                "92": {
+                  "title": "Power Gas",
+                  "price": 2861
+                }
+              }
+            ]
+          }
+        },
+        {
+          "3": {
+            "title": "Chipo",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 5070
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5330
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2770
+                }
+              }
+            ]
+          }
+        },
+        {
+          "4": {
+            "title": "Vostok Gaz",
+            "barcode_type": "bar",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4899
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 4999
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5399
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2939
+                }
+              }
+            ]
+          }
+        },
+        {
+          "5": {
+            "title": "Motto",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4998
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5498
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2928
+                }
+              }
+            ]
+          }
+        },
+        {
+          "12": {
+            "title": "AUTOTRANS",
+            "barcode_type": "bar",
+            "fuels": [
+              {
+                "92": {
+                  "title": "EURO 95",
+                  "price": 5198
+                }
+              },
+              {
+                "92": {
+                  "title": "EURO ДП",
+                  "price": 5598
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2928
+                }
+              }
+            ]
+          }
+        },
+        {
+          "14": {
+            "title": "KLO",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4907
+                }
+              },
+              {
+                "92": {
+                  "title": "Euro 95",
+                  "price": 5107
+                }
+              },
+              {
+                "92": {
+                  "title": "Ventus 95",
+                  "price": 5267
+                }
+              },
+              {
+                "92": {
+                  "title": "F100",
+                  "price": 5907
+                }
+              },
+              {
+                "92": {
+                  "title": "Diesel Euro",
+                  "price": 5447
+                }
+              },
+              {
+                "92": {
+                  "title": "Diesel Ventus",
+                  "price": 5647
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2789
+                }
+              }
+            ]
+          }
+        },
+        {
+          "17": {
+            "title": "AMIC",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 5149
+                }
+              },
+              {
+                "92": {
+                  "title": "Premium",
+                  "price": 5399
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5549
+                }
+              },
+              {
+                "92": {
+                  "title": "Premium",
+                  "price": 5749
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2829
+                }
+              }
+            ]
+          }
+        },
+        {
+          "18": {
+            "title": "Oil-X",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4790
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5000
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5100
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5300
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2640
+                }
+              }
+            ]
+          }
+        },
+        {
+          "19": {
+            "title": "MANGO",
+            "barcode_type": "qr",
+            "fuels": [
+              {
+                "92": {
+                  "title": "",
+                  "price": 4999
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 5299
+                }
+              },
+              {
+                "92": {
+                  "title": "",
+                  "price": 2605
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "discounts": {
+        "discount_group_1": {
+          "1": {
+            "95": 150,
+            "lpg": 100,
+            "dp": 125
+          },
+          "3": {
+            "95": 85,
+            "lpg": 50,
+            "dp": 110
+          }
+        },
+        "discount_group_2": {
+          "1": {
+            "95": 250,
+            "lpg": 200,
+            "dp": 225
+          },
+          "3": {
+            "95": 285,
+            "lpg": 250,
+            "dp": 2110
+          }
+        }
+      }
+    }
+  }
+}

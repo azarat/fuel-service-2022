@@ -7,6 +7,7 @@ import { LoginDto, LoginHeadersDto, loginSchema } from './dto/login-code.dto';
 import { userGuard } from '../guards/user.guard';
 
 const tokenController = (server: FastifyInstance, _, done) => {
+  // NOT CHECKED
   server.post<Headers<TokenHeadersDto>>('/code', {
     schema: { ...tokenSchema, tags: ['Login'] },
     preValidation: userGuard,
@@ -16,6 +17,7 @@ const tokenController = (server: FastifyInstance, _, done) => {
     },
   });
 
+  // NOT CHECKED
   server.get<Headers<TokenHeadersDto>>('/exist', {
     schema: { ...tokenSchema, tags: ['Login'] },
     preValidation: userGuard,
@@ -29,6 +31,7 @@ const tokenController = (server: FastifyInstance, _, done) => {
     },
   });
 
+  // CHECKING
   server.post<Headers<LoginHeadersDto> & Body<LoginDto>>('/', {
     schema: { ...loginSchema, tags: ['Login'] },
     preValidation: userGuard,

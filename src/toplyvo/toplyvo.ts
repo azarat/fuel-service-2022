@@ -1,10 +1,15 @@
 import config from '../config/config';
+import MockupPrices from '../mockups/prices.json';
+import MockupHistoryIn from '../mockups/historyIn.json';
+import MockupHistoryOut from '../mockups/historyOut.json';
 import axios, { AxiosInstance } from 'axios';
 
 import { LoginBodyDto, LoginResponse } from './dto/login.dto';
 import { CreateCodeBody } from './dto/create-code.dto';
+import { TransactionDto } from './dto/transasction.dto';
 import { OrderDto } from './dto/order.dto';
 import { tokenAviabilityEnum } from './enums/ticket-aviability.enum';
+import { transactionTypeEnum } from './enums/transaction-type.enum';
 
 class HttpClient {
   private static client: AxiosInstance;
@@ -15,9 +20,9 @@ class HttpClient {
     if (!HttpClient.client) {
       HttpClient.client = axios.create({
         baseURL: config.toplyvoUri,
-        headers: {
-          'X-Partner-Token': config.partnerToken,
-        },
+        // headers: {
+        //   'X-Partner-Token': config.partnerToken,
+        // },
       });
     }
 
@@ -44,12 +49,84 @@ class Toplyvo {
     };
   }
 
-  async getFuels() {
-    const {
-      data: { data },
-    } = await HttpClient.httpClient.get(`/partner/v1/networks`);
+  async getFuelHistory() {
+    // MOCKUP
+    const historyOut = MockupHistoryOut.data.card.transactions.map(t=>({...t, type: transactionTypeEnum.OUT}))
+    const historyIn = MockupHistoryIn.data.balance.transactions.map(t=>({
+      ...t, 
+      type: transactionTypeEnum.IN,
+      discount: null,
+      fuel_type: null,
+      station: null
+    }))
+    const historyAll = [...historyIn, ...historyOut]
 
-    return data;
+    let history:TransactionDto[] = historyAll.map((transaction) => ({
+      type: transaction.type,
+      amount: transaction.amount,
+      date: transaction.date,
+      user_uuid: transaction.user_uuid,
+      id: transaction.id,
+
+      discount: transaction.discount,
+      fuel_type: transaction.fuel_type,
+      station_id: transaction.station,
+      fuel_icon: transaction.fuel_type ? "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg" : null,
+      station_icon: transaction.fuel_type ? "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg" : null
+    }))
+
+    function compare( a, b ) {
+      if ( a.date < b.date ){
+        return -1;
+      }
+      if ( a.date > b.date ){
+        return 1;
+      }
+      return 0;
+    }
+    
+    history = history.sort( compare )
+
+    return history
+  }
+
+  async getFuels() {
+    // const {
+    //   data: { 
+    //     data: { 
+    //       card: { prices } 
+    //     } 
+    //   },
+    // } = await HttpClient.httpClient.get(`/card/prices`);
+
+    // MOCKUP
+    const discounts = MockupPrices.data.card.discounts
+    const prices = MockupPrices.data.card.prices.map((n, ni)=>({
+      ...Object.values(n)[0],
+      id: Object.keys(n)[0],
+      icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
+      fuels: Object.values(n)[0].fuels.map((f, fi)=>{
+        const fuelObj:any = Object.values(f)[0]
+
+        let currentDiscount = 0
+        if (discounts['discount_group_1'][Object.keys(n)[0]]) {
+          if (discounts['discount_group_1'][Object.keys(n)[0]][Object.keys(f)[0]]) {
+            currentDiscount = discounts['discount_group_1'][Object.keys(n)[0]][Object.keys(f)[0]]
+          }
+        }
+
+        return {
+          type: Object.keys(f)[0],
+          ...fuelObj,
+          price_at_network: fuelObj.price,
+          price: fuelObj.price - currentDiscount,
+          icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
+          fixed_ticket_volumes: [5000, 10000, 20000]
+        }
+      })
+    }))
+
+    return prices;
   }
 
   async orderFuel(

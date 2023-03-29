@@ -1,0 +1,89 @@
+{
+    "result": true,
+    "data": {
+      "card": {
+        "transactions": [
+          {
+            "id": 8403,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1672979582,
+            "amount": 5534,
+            "station": 1,
+            "fuel_type": "lpg",
+            "price": 28,
+            "discount": 8301
+          },
+          {
+            "id": 8422,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1672996381,
+            "amount": 3228,
+            "station": 17,
+            "fuel_type": "lpg",
+            "price": 29,
+            "discount": 161
+          },
+          {
+            "id": 8453,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673016602,
+            "amount": 3372,
+            "station": 1,
+            "fuel_type": "lpg",
+            "price": 28,
+            "discount": 5058
+          },
+          {
+            "id": 8474,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673020381,
+            "amount": 727,
+            "station": 3,
+            "fuel_type": "95",
+            "price": 50,
+            "discount": 727
+          },
+          {
+            "id": 8479,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673021642,
+            "amount": 1006,
+            "station": 19,
+            "fuel_type": "lpg",
+            "price": 27,
+            "discount": 0
+          },
+          {
+            "id": 8624,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673245141,
+            "amount": 1765,
+            "station": 1,
+            "fuel_type": "lpg",
+            "price": 28,
+            "discount": 2648
+          },
+          {
+            "id": 8699,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673336522,
+            "amount": 5636,
+            "station": 24,
+            "fuel_type": "lpg",
+            "price": 28,
+            "discount": 1691
+          },
+          {
+            "id": 8714,
+            "user_uuid": "3bb1490e-36f1-4125-a90f-cc72c990af3e",
+            "date": 1673343422,
+            "amount": 1000,
+            "station": 17,
+            "fuel_type": "95",
+            "price": 50,
+            "discount": 850
+          }
+        ]
+      }
+    }
+  }
