@@ -1,4 +1,5 @@
 import toplyvoRepository from '../toplyvo/toplyvo';
+import { BalanceRefillDto } from './dto/balance-refill.dto';
 
 class FuelService {
   getFuels() {
@@ -11,6 +12,10 @@ class FuelService {
 
   getBalance() {
     return toplyvoRepository.getBalance();
+  }
+
+  getBalanceRefillUrl(refill: BalanceRefillDto) {
+    return toplyvoRepository.getBalanceRefillUrl(refill);
   }
 }
 

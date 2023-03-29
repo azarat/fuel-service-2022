@@ -1,13 +1,14 @@
 import { FastifyInstance } from 'fastify';
 
-import { tokenSchema } from '../token/dto/token.dto';
+import { BalanceRefillDto } from '../fuel/dto/balance-refill.dto';
+import { TokenHeadersDto, tokenSchema } from '../token/dto/token.dto';
 import { userGuard } from '../guards/user.guard';
+import { Body, Headers } from '../types';
 
 import fuelService from './fuel.service';
 
 const fuelController = (server: FastifyInstance, _, done) => {
-  // CHECKING
-  server.get('/', {
+  server.get<Headers<TokenHeadersDto>>('/', {
     schema: { ...tokenSchema, tags: ['Fuels'] },
     preValidation: userGuard,
     handler: async (req, res) => {
@@ -18,7 +19,7 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
 
-  server.get('/history', {
+  server.get<Headers<TokenHeadersDto>>('/history', {
     schema: { ...tokenSchema, tags: ['Fuels'] },
     preValidation: userGuard,
     handler: async (req, res) => {
@@ -29,7 +30,7 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
 
-  server.get('/balance', {
+  server.get<Headers<TokenHeadersDto>>('/balance', {
     schema: { ...tokenSchema, tags: ['Fuels'] },
     preValidation: userGuard,
     handler: async (req, res) => {
@@ -37,6 +38,17 @@ const fuelController = (server: FastifyInstance, _, done) => {
       console.log(balance, "balance");
       
       return res.status(200).send(balance);
+    },
+  });
+  
+  server.post<Headers<TokenHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
+    schema: { ...tokenSchema, tags: ['Fuels'] },
+    preValidation: userGuard,
+    handler: async (req, res) => {
+      const balanceRefillUrl = await fuelService.getBalanceRefillUrl(req.body)
+      console.log(balanceRefillUrl, "balanceRefillUrl");
+      
+      return res.status(200).send(balanceRefillUrl);
     },
   });
 

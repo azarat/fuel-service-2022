@@ -4,6 +4,7 @@ import MockupHistoryIn from '../mockups/historyIn.json';
 import MockupHistoryOut from '../mockups/historyOut.json';
 import MockupBalance from '../mockups/balance.json';
 import MockupLogin from '../mockups/login.json';
+import MockupBalanceRefill from '../mockups/balanceRefill.json';
 import axios, { AxiosInstance } from 'axios';
 
 import { LoginBodyDto, LoginResponse } from './dto/login.dto';
@@ -12,6 +13,7 @@ import { TransactionDto } from './dto/transasction.dto';
 import { OrderDto } from './dto/order.dto';
 import { tokenAviabilityEnum } from './enums/ticket-aviability.enum';
 import { transactionTypeEnum } from './enums/transaction-type.enum';
+import { BalanceRefillDto } from '../fuel/dto/balance-refill.dto';
 
 class HttpClient {
   private static client: AxiosInstance;
@@ -46,6 +48,13 @@ class Toplyvo {
     return {
       token: uuid,
     };
+  }
+
+  async getBalanceRefillUrl(refill:BalanceRefillDto) {
+    // MOCKUP
+    const balanceRefillUrl = MockupBalanceRefill.data.balance.refill_link
+
+    return balanceRefillUrl
   }
 
   async getBalance() {
