@@ -2,6 +2,7 @@ import config from '../config/config';
 import MockupPrices from '../mockups/prices.json';
 import MockupHistoryIn from '../mockups/historyIn.json';
 import MockupHistoryOut from '../mockups/historyOut.json';
+import MockupBalance from '../mockups/balance.json';
 import axios, { AxiosInstance } from 'axios';
 
 import { LoginBodyDto, LoginResponse } from './dto/login.dto';
@@ -47,6 +48,13 @@ class Toplyvo {
       token: data.token,
       phone: data.client.phone,
     };
+  }
+
+  async getBalance() {
+    // MOCKUP
+    const balance = MockupBalance.data.user.balance
+
+    return balance
   }
 
   async getFuelHistory() {

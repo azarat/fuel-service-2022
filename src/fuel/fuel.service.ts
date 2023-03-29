@@ -8,6 +8,10 @@ class FuelService {
   getFuelHistory() {
     return toplyvoRepository.getFuelHistory();
   }
+
+  getBalance() {
+    return toplyvoRepository.getBalance();
+  }
 }
 
 export default new FuelService();

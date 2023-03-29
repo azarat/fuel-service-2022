@@ -29,6 +29,17 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
 
+  server.get('/balance', {
+    schema: { ...tokenSchema, tags: ['Fuels'] },
+    preValidation: userGuard,
+    handler: async (req, res) => {
+      const balance = await fuelService.getBalance()
+      console.log(balance, "balance");
+      
+      return res.status(200).send(balance);
+    },
+  });
+
   done();
 };
 
