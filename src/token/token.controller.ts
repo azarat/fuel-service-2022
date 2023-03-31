@@ -39,7 +39,7 @@ const tokenController = (server: FastifyInstance, _, done) => {
     preValidation: userGuard,
     handler: async (req, res) => {
       const uuid = await tokenService.login(req.headers.token);
-      return res.status(200).send(uuid);
+      return res.status(200).send({uuid});
     },
   });
 
