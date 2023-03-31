@@ -22,6 +22,7 @@ class TokenService {
     const { id } = await TokenService.verifyUser(token);
     const { token: userToken } = await toplyvoRepository.login({ id });
     await tokenRepository.createToken(id, userToken);
+    return userToken
   }
 
   async tokenExist(token: string): Promise<boolean> {

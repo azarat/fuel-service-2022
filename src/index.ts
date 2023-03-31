@@ -15,7 +15,7 @@ const app = fastify({
 app.get(`/${config.apiEnv}/FuelService/health`, async () => 'Hello World');
 app.register(swagger, {
   exposeRoute: true,
-  routePrefix: '/docs',
+  routePrefix: `/${config.apiEnv}/FuelService/docs`,
   swagger: {
     host: config.apiHost,
     info: {
