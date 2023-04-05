@@ -4,7 +4,7 @@ export interface TokenHeadersDto {
 
 export interface TokenUuidHeadersDto {
   token: string;
-  tokenMonobrand: string;
+  'token-monobrand': string;
 }
 
 export const tokenSchema = {
@@ -15,7 +15,7 @@ export const tokenSchema = {
 
 export const tokenUuidSchema = {
   headers: {
-    tokenMonobrand: { type: 'string' },
+    'token-monobrand': { type: 'string' },
     token: { type: 'string' },
   },
 };

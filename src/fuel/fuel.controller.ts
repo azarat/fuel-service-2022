@@ -34,21 +34,21 @@ const fuelController = (server: FastifyInstance, _, done) => {
     schema: { ...tokenUuidSchema, tags: ['Fuels'] },
     preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const balance = await fuelService.getBalance(req.headers.tokenMonobrand)
+      const balance = await fuelService.getBalance(req.headers['token-monobrand'])
       console.log(balance, "balance");
       
-      return res.status(200).send(balance);
+      return res.status(200).send({balance});
     },
   });
   
-  server.get<Headers<TokenHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
-    schema: { ...tokenSchema, tags: ['Fuels'] },
-    preValidation: userGuard,
+  server.post<Headers<TokenUuidHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
+    schema: { ...tokenUuidSchema, tags: ['Fuels'] },
+    preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const balanceRefillUrl = await fuelService.getBalanceRefillUrl(req.body)
+      const balanceRefillUrl = await fuelService.getBalanceRefillUrl(req.headers['token-monobrand'], req.body)
       console.log(balanceRefillUrl, "balanceRefillUrl");
       
-      return res.status(200).send(balanceRefillUrl);
+      return res.status(200).send({uri: balanceRefillUrl});
     },
   });
 

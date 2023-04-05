@@ -14,8 +14,8 @@ class FuelService {
     return toplyvoRepository.getBalance(uuid);
   }
 
-  getBalanceRefillUrl(refill: BalanceRefillDto) {
-    return toplyvoRepository.getBalanceRefillUrl(refill);
+  getBalanceRefillUrl(tokenMonobrand: string, refill: BalanceRefillDto) {
+    return toplyvoRepository.getBalanceRefillUrl(tokenMonobrand, refill);
   }
 }
 

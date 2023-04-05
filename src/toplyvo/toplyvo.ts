@@ -66,11 +66,23 @@ class Toplyvo {
     };
   }
 
-  async getBalanceRefillUrl(refill:BalanceRefillDto) {
+  async getBalanceRefillUrl(tokenMonobrand: string, refill:BalanceRefillDto) {
     // MOCKUP
-    const balanceRefillUrl = MockupBalanceRefill.data.balance.refill_link
+    // const balanceRefillUrl = MockupBalanceRefill.data.balance.refill_link
 
-    return balanceRefillUrl
+    const data = refill;
+    
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': tokenMonobrand
+      }
+    }
+    
+    const response = await axios.post(`${config.monobrandUri}/balance/refill`, data, reqConfig)
+
+    return response.data.data.balance.refill_link
   }
 
   async getBalance(uuid: string) {
