@@ -17,7 +17,6 @@ export const userGuard = async (req: FastifyRequest, _: FastifyReply) => {
 
 export const userUuidGuard = async (req: FastifyRequest, _: FastifyReply) => {
   const { token, 'token-monobrand': tokenMonobrand } = req.headers;
-  console.log(req.headers);
   
   if (!token) {
     throw new HttpError(403, 'Provide a token');

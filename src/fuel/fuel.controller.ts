@@ -19,11 +19,11 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
 
-  server.get<Headers<TokenHeadersDto>>('/history', {
-    schema: { ...tokenSchema, tags: ['Fuels'] },
-    preValidation: userGuard,
+  server.get<Headers<TokenUuidHeadersDto>>('/history', {
+    schema: { ...tokenUuidSchema, tags: ['Fuels'] },
+    preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const fuelHistory = await fuelService.getFuelHistory()
+      const fuelHistory = await fuelService.getFuelHistory(req.headers['token-monobrand'])
       console.log(fuelHistory, "fuelHistory");
       
       return res.status(200).send(fuelHistory);

@@ -102,10 +102,24 @@ class Toplyvo {
     return response.data.data.user.balance
   }
 
-  async getFuelHistory() {
+  async getFuelHistory(uuid: string) {
     // MOCKUP
-    const historyOut = MockupHistoryOut.data.card.transactions.map(t=>({...t, type: transactionTypeEnum.OUT}))
-    const historyIn = MockupHistoryIn.data.balance.transactions.map(t=>({
+    // MockupHistoryOut
+    // MockupHistoryIn
+
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': uuid
+      }
+    }
+    
+    const historyOutResp = await axios.get(`${config.monobrandUri}/card/transactions/0`, reqConfig)
+    const historyInResp = await axios.get(`${config.monobrandUri}/balance/transactions/0`, reqConfig)
+
+    const historyOut = historyOutResp.data.data.card.transactions.map(t=>({...t, type: transactionTypeEnum.OUT}))
+    const historyIn = historyInResp.data.data.balance.transactions.map(t=>({
       ...t, 
       type: transactionTypeEnum.IN,
       discount: null,
