@@ -14,3 +14,20 @@ export const userGuard = async (req: FastifyRequest, _: FastifyReply) => {
     throw new HttpError(401, 'Token is invalid');
   }
 };
+
+export const userUuidGuard = async (req: FastifyRequest, _: FastifyReply) => {
+  const { token, tokenMonobrand } = req.headers;
+  if (!token) {
+    throw new HttpError(403, 'Provide a token');
+  }
+
+  if (!tokenMonobrand) {
+    throw new HttpError(403, 'Provide a tokenMonobrand');
+  }
+
+  try {
+    await TokenService.verifyUser(req.headers.token as string);
+  } catch (err) {
+    throw new HttpError(401, 'Token is invalid');
+  }
+};

@@ -10,8 +10,8 @@ class FuelService {
     return toplyvoRepository.getFuelHistory();
   }
 
-  getBalance() {
-    return toplyvoRepository.getBalance();
+  getBalance(uuid: string) {
+    return toplyvoRepository.getBalance(uuid);
   }
 
   getBalanceRefillUrl(refill: BalanceRefillDto) {

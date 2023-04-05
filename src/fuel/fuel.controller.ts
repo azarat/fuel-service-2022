@@ -1,8 +1,8 @@
 import { FastifyInstance } from 'fastify';
 
 import { BalanceRefillDto } from '../fuel/dto/balance-refill.dto';
-import { TokenHeadersDto, tokenSchema } from '../token/dto/token.dto';
-import { userGuard } from '../guards/user.guard';
+import { TokenHeadersDto, tokenSchema, TokenUuidHeadersDto, tokenUuidSchema } from '../token/dto/token.dto';
+import { userGuard, userUuidGuard } from '../guards/user.guard';
 import { Body, Headers } from '../types';
 
 import fuelService from './fuel.service';
@@ -30,11 +30,11 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
 
-  server.get<Headers<TokenHeadersDto>>('/balance', {
-    schema: { ...tokenSchema, tags: ['Fuels'] },
-    preValidation: userGuard,
+  server.get<Headers<TokenUuidHeadersDto>>('/balance', {
+    schema: { ...tokenUuidSchema, tags: ['Fuels'] },
+    preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const balance = await fuelService.getBalance()
+      const balance = await fuelService.getBalance(req.headers.tokenMonobrand)
       console.log(balance, "balance");
       
       return res.status(200).send(balance);

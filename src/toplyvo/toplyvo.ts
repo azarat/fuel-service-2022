@@ -45,20 +45,21 @@ class Toplyvo {
   async login(body: LoginBodyDto): Promise<LoginResponse> {
     // MOCKUP
     // const uuid = MockupLogin.data.user.uuid
+
     const data = {
       "user": {
         "id": body.id
       }
     };
     
-    const config = {
+    const reqConfig = {
       headers: { 
-        'Apikey': '', 
+        'Apikey': config.monobrandApiKey, 
         'Content-Type': 'application/json'
       }
     }
     
-    const response = await axios.post('/auth/create', data, config)
+    const response = await axios.post(`${config.monobrandUri}/auth/create`, data, reqConfig)
 
     return {
       token: response.data.data.user.uuid,
@@ -72,11 +73,21 @@ class Toplyvo {
     return balanceRefillUrl
   }
 
-  async getBalance() {
+  async getBalance(uuid: string) {
     // MOCKUP
-    const balance = MockupBalance.data.user.balance
+    // const balance = MockupBalance.data.user.balance
 
-    return balance
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': uuid
+      }
+    }
+
+    const response = await axios.get(`${config.monobrandUri}/balance`, reqConfig)
+
+    return response.data.data.user.balance
   }
 
   async getFuelHistory() {
