@@ -34,8 +34,8 @@ class OrderService {
     return qrData
   }
 
-  getFuels() {
-    return toplyvoRepository.getFuels();
+  getFuels(uuid: string) {
+    return toplyvoRepository.getFuels(uuid);
   }
 
   async order(

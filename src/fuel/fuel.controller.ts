@@ -8,11 +8,11 @@ import { Body, Headers } from '../types';
 import fuelService from './fuel.service';
 
 const fuelController = (server: FastifyInstance, _, done) => {
-  server.get<Headers<TokenHeadersDto>>('/', {
-    schema: { ...tokenSchema, tags: ['Fuels'] },
-    preValidation: userGuard,
+  server.get<Headers<TokenUuidHeadersDto>>('/', {
+    schema: { ...tokenUuidSchema, tags: ['Fuels'] },
+    preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const fuels = await fuelService.getFuels()
+      const fuels = await fuelService.getFuels(req.headers['token-monobrand'])
       console.log(fuels[0].fuels, "fuels");
       
       return res.status(200).send(fuels);

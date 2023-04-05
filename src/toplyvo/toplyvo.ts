@@ -157,18 +157,22 @@ class Toplyvo {
     return history
   }
 
-  async getFuels() {
-    // const {
-    //   data: { 
-    //     data: { 
-    //       card: { prices } 
-    //     } 
-    //   },
-    // } = await HttpClient.httpClient.get(`/card/prices`);
-
+  async getFuels(uuid: string) {
     // MOCKUP
-    const discounts = MockupPrices.data.card.discounts
-    const prices = MockupPrices.data.card.prices.map((n, ni)=>({
+    // MockupPrices
+
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': uuid
+      }
+    }
+    
+    const pricesResp = await axios.get(`${config.monobrandUri}/card/prices`, reqConfig)
+
+    const discounts = pricesResp.data.data.card.discounts
+    const prices = pricesResp.data.data.card.prices.map((n:object, ni)=>({
       ...Object.values(n)[0],
       id: Object.keys(n)[0],
       icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",

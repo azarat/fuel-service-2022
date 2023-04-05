@@ -2,8 +2,8 @@ import toplyvoRepository from '../toplyvo/toplyvo';
 import { BalanceRefillDto } from './dto/balance-refill.dto';
 
 class FuelService {
-  getFuels() {
-    return toplyvoRepository.getFuels();
+  getFuels(uuid: string) {
+    return toplyvoRepository.getFuels(uuid);
   }
 
   getFuelHistory(uuid: string) {
