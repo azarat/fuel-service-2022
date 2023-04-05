@@ -43,10 +43,25 @@ class Toplyvo {
   }
 
   async login(body: LoginBodyDto): Promise<LoginResponse> {
-    const uuid = MockupLogin.data.user.uuid
+    // MOCKUP
+    // const uuid = MockupLogin.data.user.uuid
+    const data = {
+      "user": {
+        "id": body.id
+      }
+    };
+    
+    const config = {
+      headers: { 
+        'Apikey': '', 
+        'Content-Type': 'application/json'
+      }
+    }
+    
+    const response = await axios.post('/auth/create', data, config)
 
     return {
-      token: uuid,
+      token: response.data.data.user.uuid,
     };
   }
 

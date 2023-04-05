@@ -41,7 +41,7 @@ const fuelController = (server: FastifyInstance, _, done) => {
     },
   });
   
-  server.post<Headers<TokenHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
+  server.get<Headers<TokenHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
     schema: { ...tokenSchema, tags: ['Fuels'] },
     preValidation: userGuard,
     handler: async (req, res) => {

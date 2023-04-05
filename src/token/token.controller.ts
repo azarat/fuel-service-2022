@@ -34,8 +34,8 @@ const tokenController = (server: FastifyInstance, _, done) => {
   });
 
   // CHECKED
-  server.post<Headers<LoginHeadersDto>>('/', {
-    schema: { tags: ['Login'] },
+  server.post<Headers<TokenHeadersDto>>('/', {
+    schema: { ...tokenSchema, tags: ['Login'] },
     preValidation: userGuard,
     handler: async (req, res) => {
       const uuid = await tokenService.login(req.headers.token);
