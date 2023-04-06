@@ -43,10 +43,6 @@ class OrderService {
     
     const response = await axios.post(`${config.monobrandUri}/card/qr`, data, reqConfig)
 
-    console.log(response.data, "qr");
-    
-
-
     return response.data.data.card.qr
   }
 

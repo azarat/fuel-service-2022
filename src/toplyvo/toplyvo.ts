@@ -46,6 +46,8 @@ class Toplyvo {
     // MOCKUP
     // const uuid = MockupLogin.data.user.uuid
 
+    // console.log(body, "user id");
+
     const data = {
       "user": {
         "id": body.id
@@ -61,6 +63,8 @@ class Toplyvo {
     
     const response = await axios.post(`${config.monobrandUri}/auth/create`, data, reqConfig)
 
+    // console.log(response.data.data.user.uuid, "user id -> uuid");
+
     return {
       token: response.data.data.user.uuid,
     };
@@ -71,7 +75,10 @@ class Toplyvo {
     // const balanceRefillUrl = MockupBalanceRefill.data.balance.refill_link
 
     const data = refill;
+   
+    console.log(data, "data refill");
     
+
     const reqConfig = {
       headers: { 
         'Apikey': config.monobrandApiKey, 
@@ -79,8 +86,13 @@ class Toplyvo {
         'User-Uuid': tokenMonobrand
       }
     }
-    
+
+    console.log(tokenMonobrand, "tokenMonobrand refill");
+
     const response = await axios.post(`${config.monobrandUri}/balance/refill`, data, reqConfig)
+
+    console.log(response.data);
+    
 
     return response.data.data.balance.refill_link
   }
@@ -88,6 +100,8 @@ class Toplyvo {
   async getBalance(uuid: string) {
     // MOCKUP
     // const balance = MockupBalance.data.user.balance
+
+    let balance = 0
 
     const reqConfig = {
       headers: { 
@@ -97,9 +111,17 @@ class Toplyvo {
       }
     }
 
-    const response = await axios.get(`${config.monobrandUri}/balance`, reqConfig)
-
-    return response.data.data.user.balance
+    // console.log(uuid, "balance uuid");
+   
+    try {
+      const response = await axios.get(`${config.monobrandUri}/balance`, reqConfig)
+      balance = response.data.data.user.balance
+      // console.log(response.data, "response.data balance");
+    } catch (error) {
+      console.log(error, "balance error");
+    }
+    
+    return balance
   }
 
   async getFuelHistory(uuid: string) {
@@ -172,11 +194,8 @@ class Toplyvo {
     const pricesResp = await axios.get(`${config.monobrandUri}/card/prices`, reqConfig)
 
     const discounts = pricesResp.data.data.card.discounts
-    const prices = pricesResp.data.data.card.prices.map((n:object, ni)=>({
-      ...Object.values(n)[0],
-      id: Object.keys(n)[0],
-      icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
-      fuels: Object.values(n)[0].fuels.map((f, fi)=>{
+    let prices = pricesResp.data.data.card.prices.map((n:object, ni)=>{
+      let fuels = Object.values(n)[0].fuels.map((f, fi)=>{
         const fuelObj:any = Object.values(f)[0]
 
         let currentDiscount = 0
@@ -185,6 +204,8 @@ class Toplyvo {
             currentDiscount = discounts['discount_group_1'][Object.keys(n)[0]][Object.keys(f)[0]]
           }
         }
+
+        if (currentDiscount == 0) return null
 
         return {
           type: Object.keys(f)[0],
@@ -195,7 +216,19 @@ class Toplyvo {
           fixed_ticket_volumes: [5000, 10000, 20000]
         }
       })
-    }))
+
+      fuels = fuels.filter(f => f != null)
+
+      if (fuels.length == 0) return null
+
+      return {
+      ...Object.values(n)[0],
+      id: Object.keys(n)[0],
+      icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
+      fuels
+    }})
+
+    prices = prices.filter(p => p != null)
 
     return prices;
   }

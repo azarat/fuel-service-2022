@@ -25,7 +25,7 @@ app.register(swagger, {
   },
 });
 app.setErrorHandler((err, _, res) => {
-  console.log(err);
+  console.log(err.message);
   if (err instanceof HttpError) {
     res.status(err.code).send(err.message);
   } else {

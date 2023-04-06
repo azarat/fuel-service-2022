@@ -6,6 +6,7 @@ import { userGuard, userUuidGuard } from '../guards/user.guard';
 import { Body, Headers } from '../types';
 
 import fuelService from './fuel.service';
+import { TokenService } from '../../src/token/token.service';
 
 const fuelController = (server: FastifyInstance, _, done) => {
   server.get<Headers<TokenUuidHeadersDto>>('/', {
@@ -13,7 +14,7 @@ const fuelController = (server: FastifyInstance, _, done) => {
     preValidation: userUuidGuard,
     handler: async (req, res) => {
       const fuels = await fuelService.getFuels(req.headers['token-monobrand'])
-      console.log(fuels[0].fuels, "fuels");
+      // console.log(JSON.stringify(fuels), "fuels");
       
       return res.status(200).send(fuels);
     },
@@ -24,7 +25,7 @@ const fuelController = (server: FastifyInstance, _, done) => {
     preValidation: userUuidGuard,
     handler: async (req, res) => {
       const fuelHistory = await fuelService.getFuelHistory(req.headers['token-monobrand'])
-      console.log(fuelHistory, "fuelHistory");
+      // console.log(fuelHistory, "fuelHistory");
       
       return res.status(200).send(fuelHistory);
     },
@@ -33,20 +34,20 @@ const fuelController = (server: FastifyInstance, _, done) => {
   server.get<Headers<TokenUuidHeadersDto>>('/balance', {
     schema: { ...tokenUuidSchema, tags: ['Fuels'] },
     preValidation: userUuidGuard,
-    handler: async (req, res) => {
+    handler: async (req, res) => {      
       const balance = await fuelService.getBalance(req.headers['token-monobrand'])
-      console.log(balance, "balance");
+      // console.log(balance.data, "balance");
       
       return res.status(200).send({balance});
     },
   });
   
-  server.post<Headers<TokenUuidHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
+  server.get<Headers<TokenUuidHeadersDto> & Body<BalanceRefillDto>>('/balance/refill', {
     schema: { ...tokenUuidSchema, tags: ['Fuels'] },
     preValidation: userUuidGuard,
     handler: async (req, res) => {
       const balanceRefillUrl = await fuelService.getBalanceRefillUrl(req.headers['token-monobrand'], req.body)
-      console.log(balanceRefillUrl, "balanceRefillUrl");
+      // console.log(balanceRefillUrl, "balanceRefillUrl");
       
       return res.status(200).send({uri: balanceRefillUrl});
     },

@@ -16,7 +16,7 @@ const orderController = (server: FastifyInstance, _, done) => {
     preValidation: userUuidGuard,
     handler: async (req, res) => {
       const qr = await orderService.getQrData(req.headers['token-monobrand'], req.body)
-      console.log(qr, "qr");
+      // console.log(qr, "qr");
       
       return res.status(200).send(qr);
     },
