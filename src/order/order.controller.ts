@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify';
-import { userGuard } from '../guards/user.guard';
+import { userGuard, userUuidGuard } from '../guards/user.guard';
 
-import { TokenHeadersDto, tokenSchema } from '../token/dto/token.dto';
+import { TokenHeadersDto, tokenSchema, TokenUuidHeadersDto, tokenUuidSchema } from '../token/dto/token.dto';
 import { GenerateQrDto } from '../order/dto/generate-qr.dto';
 import { Body, Headers } from '../types';
 import {
@@ -11,11 +11,11 @@ import { CreateOrderDto, createOrderSchema } from './dto/create-order.dto';
 import orderService from './order.service';
 
 const orderController = (server: FastifyInstance, _, done) => {
-  server.post<Headers<TokenHeadersDto> & Body<GenerateQrDto>>('/qr', {
-    schema: { tags: ['Order'] },
-    // preValidation: userGuard,
+  server.post<Headers<TokenUuidHeadersDto> & Body<GenerateQrDto>>('/qr', {
+    schema: { ...tokenUuidSchema, tags: ['Order'] },
+    preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const qr = await orderService.getQrData(req.body)
+      const qr = await orderService.getQrData(req.headers['token-monobrand'], req.body)
       console.log(qr, "qr");
       
       return res.status(200).send(qr);

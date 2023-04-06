@@ -27,11 +27,27 @@ class OrderService {
     written_off_partial: 'WRITTEN_OFF_PARTIAL',
   }
 
-  async getQrData(data:GenerateQrDto) {
+  async getQrData(tokenMonobrand: string, qrData:GenerateQrDto) {
     // MOCKUP
-    const qrData = MockupQrData.data.card.qr
+    // const qrData = MockupQrData.data.card.qr
 
-    return qrData
+    const data = qrData;
+    
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': tokenMonobrand
+      }
+    }
+    
+    const response = await axios.post(`${config.monobrandUri}/card/qr`, data, reqConfig)
+
+    console.log(response.data, "qr");
+    
+
+
+    return response.data.data.card.qr
   }
 
   getFuels(uuid: string) {
