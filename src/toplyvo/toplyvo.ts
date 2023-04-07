@@ -87,8 +87,6 @@ class Toplyvo {
       }
     }
 
-    console.log(tokenMonobrand, "tokenMonobrand refill");
-
     const response = await axios.post(`${config.monobrandUri}/balance/refill`, data, reqConfig)
 
     console.log(response.data);
@@ -207,12 +205,40 @@ class Toplyvo {
 
         if (currentDiscount == 0) return null
 
+        let fuelIcon = 'https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg'
+
+        console.log(Object.values(n)[0].title + "-" + Object.keys(f)[0]);
+        
+
+        switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
+          case 'Wog-lpg':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-lpg_uid_643082a145183.jpg'
+            break;
+          case 'Wog-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dpplus_uid_643082a1746c8.jpg'
+            break;
+          case 'Wog-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95plus_uid_643082a053c70.jpg'
+            break;
+          case 'Wog-98':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
+            break;
+          case 'Wog-dp':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dp_uid_643082a0c14be.jpg'
+            break;
+          case 'Wog-95':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
+            break;
+          default:
+            break;
+        }
+  
         return {
           type: Object.keys(f)[0],
           ...fuelObj,
           price_at_network: fuelObj.price,
           price: fuelObj.price - currentDiscount,
-          icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
+          icon: fuelIcon,
           fixed_ticket_volumes: [5000, 10000, 20000]
         }
       })
@@ -221,10 +247,23 @@ class Toplyvo {
 
       if (fuels.length == 0) return null
 
+      let azsIcon = 'https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg'
+
+      switch (Object.values(n)[0].title) {
+        case 'Wog':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog_uid_643082a1c427f.jpg'
+          break;
+        case 'Chipo':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Chipo_uid_643082a19158e.jpg'
+          break;
+        default:
+          break;
+      }
+
       return {
       ...Object.values(n)[0],
       id: Object.keys(n)[0],
-      icon: "https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg",
+      icon: azsIcon,
       fuels
     }})
 
