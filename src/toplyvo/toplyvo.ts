@@ -205,12 +205,13 @@ class Toplyvo {
 
         if (currentDiscount == 0) return null
 
-        let fuelIcon = 'https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg'
+        let fuelIcon = ''
 
         console.log(Object.values(n)[0].title + "-" + Object.keys(f)[0]);
         
 
         switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
+          case 'Chipo-lpg':
           case 'Wog-lpg':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-lpg_uid_643082a145183.jpg'
             break;
@@ -223,9 +224,11 @@ class Toplyvo {
           case 'Wog-98':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
             break;
+          case 'Chipo-dp':
           case 'Wog-dp':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dp_uid_643082a0c14be.jpg'
             break;
+          case 'Chipo-95':
           case 'Wog-95':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
             break;
@@ -247,14 +250,14 @@ class Toplyvo {
 
       if (fuels.length == 0) return null
 
-      let azsIcon = 'https://apprecs.org/gp/images/app-icons/300/51/ua.wog.jpg'
+      let azsIcon = ''
 
       switch (Object.values(n)[0].title) {
         case 'Wog':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog_uid_643082a1c427f.jpg'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/10/Wog_uid_643416478ceef.png'
           break;
         case 'Chipo':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Chipo_uid_643082a19158e.jpg'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/10/Chipo_uid_64341646edf40.png'
           break;
         default:
           break;
