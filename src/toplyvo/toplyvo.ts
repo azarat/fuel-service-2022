@@ -197,9 +197,9 @@ class Toplyvo {
         const fuelObj:any = Object.values(f)[0]
 
         let currentDiscount = 0
-        if (discounts['discount_group_1'][Object.keys(n)[0]]) {
-          if (discounts['discount_group_1'][Object.keys(n)[0]][Object.keys(f)[0]]) {
-            currentDiscount = discounts['discount_group_1'][Object.keys(n)[0]][Object.keys(f)[0]]
+        if (discounts['Default'][Object.keys(n)[0]]) {
+          if (discounts['Default'][Object.keys(n)[0]][Object.keys(f)[0]]) {
+            currentDiscount = discounts['Default'][Object.keys(n)[0]][Object.keys(f)[0]]
           }
         }
 
@@ -210,27 +210,29 @@ class Toplyvo {
         console.log(Object.values(n)[0].title + "-" + Object.keys(f)[0]);
         
 
-        switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
-          case 'Chipo-lpg':
-          case 'Wog-lpg':
+        switch (Object.keys(f)[0]) {
+          case '98':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
+            break;
+          case 'lpg':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-lpg_uid_643082a145183.jpg'
             break;
+          case 'dp':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dp_uid_643082a0c14be.jpg'
+            break;
+          case '95':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
+            break;
+          default:
+            break;
+        }
+
+        switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
           case 'Wog-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dpplus_uid_643082a1746c8.jpg'
             break;
           case 'Wog-95plus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95plus_uid_643082a053c70.jpg'
-            break;
-          case 'Wog-98':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
-            break;
-          case 'Chipo-dp':
-          case 'Wog-dp':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dp_uid_643082a0c14be.jpg'
-            break;
-          case 'Chipo-95':
-          case 'Wog-95':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
             break;
           default:
             break;
