@@ -228,6 +228,30 @@ class Toplyvo {
         }
 
         switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
+          case 'KLO-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/klo-diesel-ventus_uid_64382a140bb5f.png'
+            break;
+          case 'KLO-98':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/klo-f100_uid_64382a14c91d4.png'
+            break;
+          case 'KLO-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/klo-95-ventus_uid_64382a1599592.png'
+            break;
+          case 'Motto-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/motto-95-euro_uid_64383174ca3a5.png'
+            break;
+          case 'UPG-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-95upg_uid_64382a1a3d6ff.png'
+            break;
+          case 'UPG-98':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-100upg_uid_64382a19f3323.png'
+            break;
+          case 'Shell-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/shell-95-v-poser_uid_643831154da01.png'
+            break;
+          case 'Shell-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/shell-dp-v-poser_uid_643831157f7c6.png'
+            break;
           case 'Wog-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-dpplus_uid_643082a1746c8.jpg'
             break;
@@ -255,6 +279,39 @@ class Toplyvo {
       let azsIcon = ''
 
       switch (Object.values(n)[0].title) {
+        case 'UGO':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/u.go_uid_6438260dcdae8.png'
+          break;
+        case 'FAKTOR':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/factor_uid_6438260e0f602.png'
+          break;
+        case 'MAN GO':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/mango_uid_6438260d9192a.png'
+          break;
+        case 'Oil-X':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/oil-x_uid_6438260d5b613.png'
+          break;
+        case 'AMIC':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/amic_uid_6438260c3effa.png'
+          break;
+        case 'KLO':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/KLO_uid_6438260bcded2.png'
+          break;
+        case 'AUTOTRANS':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/Autotrans_uid_6438260b3092b.png'
+          break;
+        case 'Motto':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/moto_uid_6438260a3db4b.png'
+          break;
+        case 'Vostok Gaz':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/vostokgaz_uid_64382609e6357.png'
+          break;
+        case 'UPG':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg_uid_643826098f9cf.png'
+          break;
+        case 'Shell':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/shell_uid_6438260948657.png'
+          break;
         case 'Wog':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/10/Wog_uid_643416478ceef.png'
           break;
