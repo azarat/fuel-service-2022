@@ -223,11 +223,20 @@ class Toplyvo {
           case '95':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
             break;
+          case '92':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/92_uid_64410f1c21a2a.png'
+            break;
           default:
             break;
         }
 
         switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
+          case 'Amic-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-95-premium_uid_64410f1c07e35.png'
+            break;
+          case 'Amic-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-dp-prem_uid_64410f1bdfe73.png'
+            break;
           case 'KLO-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/klo-diesel-ventus_uid_64382a140bb5f.png'
             break;
