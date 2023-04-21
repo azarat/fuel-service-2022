@@ -231,6 +231,12 @@ class Toplyvo {
         }
 
         switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
+          case 'Oil-X-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/oilx-95plus_uid_64413fec4beea.png'
+            break;
+          case 'Oil-X-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/oilx-dpplus_uid_64413fec64f7f.png'
+            break;
           case 'Amic-95plus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-95-premium_uid_64410f1c07e35.png'
             break;
@@ -295,13 +301,13 @@ class Toplyvo {
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/factor_uid_6438260e0f602.png'
           break;
         case 'MAN GO':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/mango_uid_6438260d9192a.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/NGO_uid_6441db1ab5df8.png'
           break;
         case 'Oil-X':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/oil-x_uid_6438260d5b613.png'
           break;
         case 'AMIC':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/amic_uid_6438260c3effa.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/AMIC_uid_6441db1a6bb2c.png'
           break;
         case 'KLO':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/KLO_uid_6438260bcded2.png'
@@ -313,13 +319,13 @@ class Toplyvo {
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/moto_uid_6438260a3db4b.png'
           break;
         case 'Vostok Gaz':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/vostokgaz_uid_64382609e6357.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/VostokGaz_uid_6441db1a91ea4.png'
           break;
         case 'UPG':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg_uid_643826098f9cf.png'
           break;
         case 'Shell':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/shell_uid_6438260948657.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/Shell_uid_6441db1a4d4bb.png'
           break;
         case 'Wog':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/10/Wog_uid_643416478ceef.png'
