@@ -301,13 +301,13 @@ class Toplyvo {
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/factor_uid_6438260e0f602.png'
           break;
         case 'MAN GO':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/NGO_uid_6441db1ab5df8.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/Mango-ellipse_uid_644290082645b.png'
           break;
         case 'Oil-X':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/oil-x_uid_6438260d5b613.png'
           break;
         case 'AMIC':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/AMIC_uid_6441db1a6bb2c.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/Amic-ellipse_uid_644290088a061.png'
           break;
         case 'KLO':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/KLO_uid_6438260bcded2.png'
@@ -319,13 +319,13 @@ class Toplyvo {
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/moto_uid_6438260a3db4b.png'
           break;
         case 'Vostok Gaz':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/VostokGaz_uid_6441db1a91ea4.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/VostokGaz-ellipse_uid_6442900867d9b.png'
           break;
         case 'UPG':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg_uid_643826098f9cf.png'
           break;
         case 'Shell':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/Shell_uid_6441db1a4d4bb.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/21/Shell-ellipse_uid_6442900849b48.png'
           break;
         case 'Wog':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/10/Wog_uid_643416478ceef.png'
