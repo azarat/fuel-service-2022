@@ -144,13 +144,15 @@ class Toplyvo {
       type: transactionTypeEnum.IN,
       discount: null,
       fuel_type: null,
-      station: null
+      station: null,
+      price: null
     }))
     const historyAll = [...historyIn, ...historyOut]
 
     let history:TransactionDto[] = historyAll.map((transaction) => ({
       type: transaction.type,
       amount: transaction.amount,
+      price: transaction.price,
       date: transaction.date,
       user_uuid: transaction.user_uuid,
       id: transaction.id,
