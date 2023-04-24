@@ -175,6 +175,7 @@ class Toplyvo {
     }
     
     history = history.sort( compare )
+    history = history.filter( t => t.user_uuid == uuid )
 
     return history
   }
