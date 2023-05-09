@@ -240,10 +240,10 @@ class Toplyvo {
           case 'Oil-X-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/oilx-dpplus_uid_64413fec64f7f.png'
             break;
-          case 'Amic-95plus':
+          case 'AMIC-95plus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-95-premium_uid_64410f1c07e35.png'
             break;
-          case 'Amic-dpplus':
+          case 'AMIC-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-dp-prem_uid_64410f1bdfe73.png'
             break;
           case 'KLO-dpplus':
@@ -260,6 +260,12 @@ class Toplyvo {
             break;
           case 'UPG-95plus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-95upg_uid_64382a1a3d6ff.png'
+            break;
+          case 'UGO-dpplus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/dp-ugo-gold_uid_645a2ee520e56.png'
+            break;
+          case 'UGO-95plus':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/ugo-95-gold_uid_645a2ee56ded5.png'
             break;
           case 'UPG-98':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-100upg_uid_64382a19f3323.png'
