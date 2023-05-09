@@ -215,7 +215,7 @@ class Toplyvo {
 
         switch (Object.keys(f)[0]) {
           case '98':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/98_uid_645a370cd5d49.png'
             break;
           case 'lpg':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-lpg_uid_643082a145183.jpg'
@@ -282,7 +282,10 @@ class Toplyvo {
           case 'Wog-95plus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95plus_uid_643082a053c70.jpg'
             break;
-          default:
+          case 'Wog-98':
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-98_uid_643082a089f9f.jpg'
+            break;
+            default:
             break;
         }
   
