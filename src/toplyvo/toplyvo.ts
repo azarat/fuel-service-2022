@@ -227,7 +227,7 @@ class Toplyvo {
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/07/Wog-95_uid_643082981c805.jpg'
             break;
           case '92':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/92_uid_64410f1c21a2a.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/92_uid_645a651c0bafd.png'
             break;
           default:
             break;
@@ -235,13 +235,13 @@ class Toplyvo {
 
         switch (Object.values(n)[0].title + "-" + Object.keys(f)[0]) {
           case 'Oil-X-95plus':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/oilx-95plus_uid_64413fec4beea.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/oilx-95-plus_uid_645a64516e90e.png'
             break;
           case 'Oil-X-dpplus':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/oilx-dpplus_uid_64413fec64f7f.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/oilx-dp-plus_uid_645a6451560c2.png'
             break;
           case 'AMIC-95plus':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-95-premium_uid_64410f1c07e35.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/amic-95-premium_uid_645a640408aea.png'
             break;
           case 'AMIC-dpplus':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/20/amic-dp-prem_uid_64410f1bdfe73.png'
@@ -262,10 +262,10 @@ class Toplyvo {
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-95upg_uid_64382a1a3d6ff.png'
             break;
           case 'UGO-dpplus':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/dp-ugo-gold_uid_645a2ee520e56.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/ugo-dp-gold_uid_645a64d6a0ffd.png'
             break;
           case 'UGO-95plus':
-            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/ugo-95-gold_uid_645a2ee56ded5.png'
+            fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/05/09/ugo-95-plus_uid_645a64d6c0047.png'
             break;
           case 'UPG-98':
             fuelIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/upg-100upg_uid_64382a19f3323.png'
