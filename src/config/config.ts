@@ -24,6 +24,8 @@ class Config {
   mongoUri: string;
   port: string;
   toplyvoUri: string;
+  monobrandUri: string;
+  monobrandApiKey: string;
   paymentType: string;
   userSdkUrl: string;
   userSdkSecret: string;
@@ -31,6 +33,8 @@ class Config {
   pushNotificationsUri: string;
 
   constructor() {
+    // this.monobrandApiKey = process.env.MONOBRAND_API_KEY;
+    // this.monobrandUri = process.env.MONOBRAND_URI;
     this.port = process.env.PORT;
     this.apiHost = process.env.API_HOST;
     this.apiEnv = process.env.API_ENV;
@@ -38,6 +42,8 @@ class Config {
   }
 
   async init() {
+    this.monobrandApiKey = await Config.getSecret('MONOBRAND_API_KEY');
+    this.monobrandUri = await Config.getSecret('MONOBRAND_URI');
     this.mongoUri = await Config.getSecret('MONGO_URI');
     this.partnerToken = await Config.getSecret('PARTNER_TOKEN');
     this.toplyvoUri = await Config.getSecret('TOPLYVO_URI');

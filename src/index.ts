@@ -15,7 +15,7 @@ const app = fastify({
 app.get(`/${config.apiEnv}/FuelService/health`, async () => 'Hello World');
 app.register(swagger, {
   exposeRoute: true,
-  routePrefix: '/docs',
+  routePrefix: `/${config.apiEnv}/FuelService/docs`,
   swagger: {
     host: config.apiHost,
     info: {
@@ -25,7 +25,7 @@ app.register(swagger, {
   },
 });
 app.setErrorHandler((err, _, res) => {
-  console.log(err);
+  console.log(err.message);
   if (err instanceof HttpError) {
     res.status(err.code).send(err.message);
   } else {

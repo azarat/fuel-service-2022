@@ -8,6 +8,8 @@ import { CreateOrderDto } from './dto/create-order.dto';
 import { CallbackOrderDto } from './dto/callback-order.dto';
 import { TokenService } from '../token/token.service';
 import axios from 'axios';
+import MockupQrData from '../mockups/qr.json'
+import { GenerateQrDto } from './dto/generate-qr.dto';
 
 class OrderService {
   private static STATUSES = {
@@ -25,8 +27,27 @@ class OrderService {
     written_off_partial: 'WRITTEN_OFF_PARTIAL',
   }
 
-  getFuels() {
-    return toplyvoRepository.getFuels();
+  async getQrData(tokenMonobrand: string, qrData:GenerateQrDto) {
+    // MOCKUP
+    // const qrData = MockupQrData.data.card.qr
+
+    const data = qrData;
+    
+    const reqConfig = {
+      headers: { 
+        'Apikey': config.monobrandApiKey, 
+        'Content-Type': 'application/json',
+        'User-Uuid': tokenMonobrand
+      }
+    }
+    
+    const response = await axios.post(`${config.monobrandUri}/card/qr`, data, reqConfig)
+
+    return response.data.data.card.qr
+  }
+
+  getFuels(uuid: string) {
+    return toplyvoRepository.getFuels(uuid);
   }
 
   async order(
