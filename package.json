@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "start": "nodemon"
+    "build": "tsc",
+    "dev": "nodemon",
+    "start": "node ./build/src/index.js"
   },
   "keywords": [],
   "author": "",
