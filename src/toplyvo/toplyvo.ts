@@ -306,8 +306,13 @@ class Toplyvo {
       let azsIcon = ''
 
       switch (Object.values(n)[0].title) {
+
+        case 'ASLAN':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/07/21/aslan_uid_64ba79f80f4eb.jpg'
+          break;
         case 'UGO':
-          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/u.go_uid_6438260dcdae8.png'
+          // azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/u.go_uid_6438260dcdae8.png'
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/07/21/UGO_uid_64ba79f8372f1.png'
           break;
         case 'FAKTOR':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/04/13/factor_uid_6438260e0f602.png'
