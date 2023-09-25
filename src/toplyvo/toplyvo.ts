@@ -14,6 +14,7 @@ import { OrderDto } from './dto/order.dto';
 import { tokenAviabilityEnum } from './enums/ticket-aviability.enum';
 import { transactionTypeEnum } from './enums/transaction-type.enum';
 import { BalanceRefillDto } from '../fuel/dto/balance-refill.dto';
+import orderRepository from '../order/order.repository';
 
 class HttpClient {
   private static client: AxiosInstance;
@@ -63,6 +64,10 @@ class Toplyvo {
     
     const response = await axios.post(`${config.monobrandUri}/auth/create`, data, reqConfig)
 
+    await orderRepository.upsertUuid(
+      response.data.data.user.uuid,
+      body.id
+    )
     // console.log(response.data.data.user.uuid, "user id -> uuid");
 
     return {
@@ -89,7 +94,7 @@ class Toplyvo {
 
     const response = await axios.post(`${config.monobrandUri}/balance/refill`, data, reqConfig)
 
-    console.log(response.data);
+    // console.log(response.data);
     
 
     return response.data.data.balance.refill_link

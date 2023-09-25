@@ -27,7 +27,7 @@ class OrderService {
     written_off_partial: 'WRITTEN_OFF_PARTIAL',
   }
 
-  async getQrData(tokenMonobrand: string, qrData:GenerateQrDto) {
+  async getQrData(tokenClient: string, tokenMonobrand: string, qrData:GenerateQrDto) {
     // MOCKUP
     // const qrData = MockupQrData.data.card.qr
 
@@ -42,6 +42,14 @@ class OrderService {
     }
     
     const response = await axios.post(`${config.monobrandUri}/card/qr`, data, reqConfig)
+
+    const user = await TokenService.verifyUser(tokenClient as string);
+
+    await orderRepository.upsertTitle(
+      user.id,
+      tokenMonobrand,
+      response.data.data.card.qr.title
+    )
 
     return response.data.data.card.qr
   }
