@@ -15,7 +15,7 @@ const orderController = (server: FastifyInstance, _, done) => {
     schema: { ...tokenUuidSchema, tags: ['Order'] },
     preValidation: userUuidGuard,
     handler: async (req, res) => {
-      const qr = await orderService.getQrData(req.headers['token-monobrand'], req.body)
+      const qr = await orderService.getQrData(req.headers['token'], req.headers['token-monobrand'], req.body)
       // console.log(qr, "qr");
       
       return res.status(200).send(qr);
