@@ -312,6 +312,9 @@ class Toplyvo {
 
       switch (Object.values(n)[0].title) {
 
+        case 'UKRNAFTA':
+          azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/11/16/ukrnafta_uid_6555b90d40ae5.jpg'
+          break;
         case 'ASLAN':
           azsIcon = 'http://157.230.99.45:8001/storage/uploads/2023/07/21/aslan_uid_64ba79f80f4eb.jpg'
           break;
