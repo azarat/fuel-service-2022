@@ -1,5 +1,6 @@
 import toplyvoRepository from '../toplyvo/toplyvo';
 import { BalanceRefillDto } from './dto/balance-refill.dto';
+import { MobistaRequest } from './dto/mobista-request.dto';
 
 class FuelService {
   getFuels(uuid: string) {
@@ -16,6 +17,10 @@ class FuelService {
 
   getBalanceRefillUrl(tokenMonobrand: string, refill: BalanceRefillDto) {
     return toplyvoRepository.getBalanceRefillUrl(tokenMonobrand, refill);
+  }
+
+  requestDelivery(data: MobistaRequest) {
+    return toplyvoRepository.requestDelivery(data);
   }
 }
 
