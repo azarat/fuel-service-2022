@@ -15,6 +15,8 @@ import { tokenAviabilityEnum } from './enums/ticket-aviability.enum';
 import { transactionTypeEnum } from './enums/transaction-type.enum';
 import { BalanceRefillDto } from '../fuel/dto/balance-refill.dto';
 import orderRepository from '../order/order.repository';
+import { MobistaRequest } from '../fuel/dto/mobista-request.dto';
+import { Telegraf } from 'telegraf';
 
 class HttpClient {
   private static client: AxiosInstance;
@@ -73,6 +75,62 @@ class Toplyvo {
     return {
       token: response.data.data.user.uuid,
     };
+  }
+
+  async getMobistaFuels() {
+    return [
+      {
+        title: "95+",
+        subtitle: "Euro",
+        price: 59.99,
+      },
+      {
+        title: "ДП",
+        subtitle: "Euro",
+        price: 49.99,
+      }
+    ]
+  }
+
+  async requestDelivery(body: MobistaRequest) {
+    // TEST bot auslander
+    const token: string = '6740565678:AAEExv2OZ2icNS_cEfcZSBAgjSlnT8zb2kg' as string;
+    const bot = new Telegraf(token);
+
+    if (!body) return false;
+
+    let msg = '[Заявка від DayDrive]\n\n'
+
+    if (body.name)
+    msg += "Імʼя: " + body.name + "\n"
+    if (body.address)
+    msg += "Адреса: " + body.address + "\n"
+    if (body.location)
+    msg += "Мапа: " + body.location + "\n"
+    if (body.phone)
+    msg += "Телефон: " + body.phone + "\n"
+    if (body.fuelType)
+    msg += "Паливо: " + body.fuelType + "\n"
+    if (body.fuelAmount)
+    msg += "Обʼєм: " + body.fuelAmount + "\n"
+    if (body.date)
+    msg += "Дата: " + body.date + "\n"
+    if (body.time)
+    msg += "Час: " + body.time + "\n"
+    if (body.payMethod)
+    msg += "Спосіб оплати: " + body.payMethod + "\n"
+    if (body.comment)
+    msg += "Коментар: " + body.comment
+
+
+    for (var chatId of ['444816689', '347325711']) {
+      bot.telegram.sendMessage(
+        chatId,
+        msg
+      )
+    }
+
+    return true
   }
 
   async getBalanceRefillUrl(tokenMonobrand: string, refill:BalanceRefillDto) {
@@ -215,7 +273,7 @@ class Toplyvo {
 
         let fuelIcon = ''
 
-        console.log(Object.values(n)[0].title + "-" + Object.keys(f)[0]);
+        // console.log(Object.values(n)[0].title + "-" + Object.keys(f)[0]);
         
 
         switch (Object.keys(f)[0]) {
