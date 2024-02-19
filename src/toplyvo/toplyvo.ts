@@ -82,12 +82,12 @@ class Toplyvo {
       {
         title: "95+",
         subtitle: "Euro",
-        price: 59.99,
+        price: 53.99,
       },
       {
         title: "ДП",
         subtitle: "Euro",
-        price: 49.99,
+        price: 53.99,
       }
     ]
   }
