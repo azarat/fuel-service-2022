@@ -77,8 +77,24 @@ class Toplyvo {
     };
   }
 
+  async getMobistaFuels() {
+    return [
+      {
+        title: "95+",
+        subtitle: "Euro",
+        price: 59.99,
+      },
+      {
+        title: "ДП",
+        subtitle: "Euro",
+        price: 49.99,
+      }
+    ]
+  }
+
   async requestDelivery(body: MobistaRequest) {
-    const token: string = '6740565678:AAEExv2OZ2icNS_cEfcZSBAgjSlnT8zb2kg' as string; // TEST bot auslander
+    // TEST bot auslander
+    const token: string = '6740565678:AAEExv2OZ2icNS_cEfcZSBAgjSlnT8zb2kg' as string;
     const bot = new Telegraf(token);
 
     if (!body) return false;
@@ -106,10 +122,13 @@ class Toplyvo {
     if (body.comment)
     msg += "Коментар: " + body.comment
 
-    bot.telegram.sendMessage(
-        '444816689',
+
+    for (var chatId of ['444816689', '347325711']) {
+      bot.telegram.sendMessage(
+        chatId,
         msg
-    )
+      )
+    }
 
     return true
   }

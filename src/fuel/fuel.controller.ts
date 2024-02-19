@@ -47,9 +47,6 @@ const fuelController = (server: FastifyInstance, _, done) => {
     schema: { ...tokenUuidSchema, tags: ['Fuels'] },
     preValidation: userUuidGuard,
     handler: async (req, res) => {
-      console.log(req.headers, "req.headers");
-      console.log(req.body, "req.body");
-      
       const balanceRefillUrl = await fuelService.getBalanceRefillUrl(req.headers['token-monobrand'], req.body)
       // console.log(balanceRefillUrl, "balanceRefillUrl");
       
@@ -61,12 +58,19 @@ const fuelController = (server: FastifyInstance, _, done) => {
     schema: { ...tokenUuidSchema, tags: ['Fuels'] },
     preValidation: userUuidGuard,
     handler: async (req, res) => {
-      console.log(req.headers, "req.headers");
-      console.log(req.body, "req.body");
-      
       const requestDelivery = await fuelService.requestDelivery(req.body)
       
       return res.status(200).send({status: "ok"});
+    },
+  });
+
+  server.get<Headers<MobistaTokenUuidHeadersDto>>('/mobista/fuels', {
+    schema: { ...tokenUuidSchema, tags: ['Fuels'] },
+    preValidation: userUuidGuard,
+    handler: async (req, res) => {
+      const mobistaFuels = await fuelService.getMobistaFuels()
+      
+      return res.status(200).send({status: "ok", fuels: mobistaFuels});
     },
   });
 

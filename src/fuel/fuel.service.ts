@@ -22,6 +22,10 @@ class FuelService {
   requestDelivery(data: MobistaRequest) {
     return toplyvoRepository.requestDelivery(data);
   }
+
+  getMobistaFuels() {
+    return toplyvoRepository.getMobistaFuels();
+  }
 }
 
 export default new FuelService();
