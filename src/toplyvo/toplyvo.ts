@@ -80,7 +80,7 @@ class Toplyvo {
   async getMobistaFuels() {
     return [
       {
-        title: "95+",
+        title: "95",
         subtitle: "Euro",
         price: 53.99,
       },
