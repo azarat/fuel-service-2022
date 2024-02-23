@@ -93,10 +93,6 @@ class Toplyvo {
   }
 
   async requestDelivery(body: MobistaRequest) {
-    // TEST bot auslander
-    const token: string = '6740565678:AAEExv2OZ2icNS_cEfcZSBAgjSlnT8zb2kg' as string;
-    const bot = new Telegraf(token);
-
     if (!body) return false;
 
     let msg = '[Заявка від DayDrive]\n\n'
@@ -123,8 +119,29 @@ class Toplyvo {
     msg += "Коментар: " + body.comment
 
 
+    // TEST bot auslander
+    const token: string = '6740565678:AAEExv2OZ2icNS_cEfcZSBAgjSlnT8zb2kg' as string;
+    const bot = new Telegraf(token);
+    
     for (var chatId of ['444816689', '347325711']) {
       bot.telegram.sendMessage(
+        chatId,
+        msg
+      )
+    }
+
+    // bot Mobista
+    const token2: string = '6260958662:AAEfbLVJGGM4Dx38rxBRz3XoSzYEqd_sLO8' as string;
+    const bot2 = new Telegraf(token2);
+    
+    for (var chatId of [
+      "0346158530",
+      "139814009",
+      "426089789",
+      "412435384",
+      "835268905"
+    ]) {
+      bot2.telegram.sendMessage(
         chatId,
         msg
       )
